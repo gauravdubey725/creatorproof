@@ -7,10 +7,13 @@
 // In development with Vite proxy, '/api' proxies to http://localhost:3000.
 // In production served by Express, '/api' is on the same origin.
 const getBaseUrl = (): string => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl) return envUrl.replace(/\/+$/, '');
+
   if (typeof window !== 'undefined' && (window as any).API_BASE_URL) {
     return (window as any).API_BASE_URL.replace(/\/+$/, '');
   }
-  // Default to relative /api which works with Vite proxy and Express static serve
+
   return '/api';
 };
 
