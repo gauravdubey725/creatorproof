@@ -9,11 +9,6 @@
 const getBaseUrl = (): string => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (envUrl) return envUrl.replace(/\/+$/, '');
-
-  if (typeof window !== 'undefined' && (window as any).API_BASE_URL) {
-    return (window as any).API_BASE_URL.replace(/\/+$/, '');
-  }
-
   return '/api';
 };
 
