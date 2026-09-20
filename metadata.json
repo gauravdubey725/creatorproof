@@ -1,0 +1,6 @@
+{
+  "name": "CreatorProof",
+  "description": "Blockchain Content Protection System for creators to register cryptographic SHA-256 proofs and verify digital asset authenticity on-chain.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
